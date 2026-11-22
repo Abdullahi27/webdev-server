@@ -7,7 +7,7 @@ const assignment = {
   score: 0,
 };
 
-const module = {
+const moduleData = {
   id: "M101",
   name: "Introduction to Node.js",
   description: "Learn Express HTTP routes",
@@ -42,23 +42,23 @@ function WorkingWithRemoteObjects(app) {
   };
 
   const getModule = (req, res) => {
-    res.json(module);
+    res.json(moduleData);
   };
 
   const getModuleName = (req, res) => {
-    res.json(module.name);
+    res.json(moduleData.name);
   };
 
   const setModuleName = (req, res) => {
     const { newName } = req.params;
-    module.name = newName;
-    res.json(module);
+    moduleData.name = newName;
+    res.json(moduleData);
   };
 
   const setModuleDescription = (req, res) => {
     const { newDescription } = req.params;
-    module.description = newDescription;
-    res.json(module);
+    moduleData.description = newDescription;
+    res.json(moduleData);
   };
 
   app.get("/lab5/assignment/title/:newTitle", setAssignmentTitle);
